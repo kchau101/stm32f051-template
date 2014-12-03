@@ -84,6 +84,10 @@ $(PROJ_NAME).elf: $(SRCS)
 program: $(PROJ_NAME).bin
 	openocd -f $(OPENOCD_BOARD_DIR)/stm32f0discovery.cfg -f $(OPENOCD_PROC_FILE) -c "stm_flash `pwd`/$(PROJ_NAME).bin" -c shutdown
 
+debug:
+	echo "Starting OpenOCD and connecting to target..."
+	openocd -f $(OPENOCD_BOARD_DIR)/stm32f0discovery.cfg -f $(OPENOCD_PROC_FILE) -c "stm_flash `pwd`/$(PROJ_NAME).bin" &
+
 clean:
 	find ./ -name '*~' | xargs rm -f
 	rm -f *.o

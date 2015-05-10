@@ -20,7 +20,7 @@ rmdir gcc-arm-none-eabi-${timestamp}
 rm gcc-arm-none-eabi-${version}.tar
 
 echo "GCC-ARM Setup complete, Adding to PATH"
-echo "export PATH=\$PATH:~/gcc-arm" >> ~/.bashrc
+echo "export PATH=\$PATH:~/gcc-arm/bin" >> ~/.bashrc
 echo "GCC-ARM Setup Complete!"
 
 echo "Downloading STLINKV2 UDEV rules..."
